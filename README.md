@@ -7,7 +7,7 @@ The header view will float on the top on two cases:
  - ScrollView is scrolled all the way to the top;
  - User scrolled up faster than a normal scroll.
 
-<img src="images/image1.jpg" alt="Facebook Example" style="width:300px;"/>
+<img src="images/image1.jpg" alt="Facebook Example" style="width:200px;"/>
 
 This is supposed to work on iOS 5+.
 
