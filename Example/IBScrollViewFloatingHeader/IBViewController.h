@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "UIScrollView+IBFloatingHeader.h"
-@interface IBViewController : UIViewController
+@interface IBViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
+    NSArray* array;
+}
 
-@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @end

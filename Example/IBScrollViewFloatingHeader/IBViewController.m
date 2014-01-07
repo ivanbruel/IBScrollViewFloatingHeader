@@ -14,13 +14,25 @@
 
 @implementation IBViewController
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return array.count;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if(cell == nil){
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
+    [cell.textLabel setText:array[indexPath.row]];
+    return cell;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.scrollView setContentSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, 10000)];
+    array =  [NSArray arrayWithObjects: @"Red", @"Green", @"Blue", @"Yellow",@"Red", @"Green", @"Blue", @"Yellow",@"Red", @"Green", @"Blue", @"Yellow",@"Red", @"Green", @"Blue", @"Yellow",@"Red", @"Green", @"Blue", @"Yellow",@"Red", @"Green", @"Blue", @"Yellow",@"Red", @"Green", @"Blue", @"Yellow",@"Red", @"Green", @"Blue", @"Yellow",@"Red", @"Green", @"Blue", @"Yellow",@"Red", @"Green", @"Blue", @"Yellow", nil];
+    
     UIView* header = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen]bounds].size.width, 40)];
     [header setBackgroundColor:[UIColor redColor]];
-    [self.scrollView setFloatingHeaderView:header];
+    [self.tableView setFloatingHeaderView:header];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
