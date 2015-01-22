@@ -116,4 +116,9 @@ static void * IBFloatingHeaderViewContext = &IBFloatingHeaderViewContext;
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
+
+- (void)removeContentOffsetObserver {
+    [self removeObserver:self forKeyPath:@"contentOffset" context:IBFloatingHeaderViewContext];
+}
+
 @end
