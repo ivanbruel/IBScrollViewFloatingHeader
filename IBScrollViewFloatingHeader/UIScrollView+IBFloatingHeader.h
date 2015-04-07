@@ -12,4 +12,6 @@
 
 @property(nonatomic,retain) UIView* floatingHeaderView;
 
+-(void)removeContentOffsetObserver;
+
 @end

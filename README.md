@@ -29,6 +29,11 @@ Create a custom UIView and set it as the floating header for the UIScrollView/UI
 	UIView* header = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen]bounds].size.width, 40)];
     [header setBackgroundColor:[UIColor redColor]];
     [self.scrollView setFloatingHeaderView:header];
+
+In your view controller, add:
+	`- (void)viewWillDisappear:(BOOL)animated {
+    	[self.tableView removeContentOffsetObserver];
+	}`
 	
 Access the floating view by sending the floatingHeaderView message to the UIScrollView/UITableView
 
