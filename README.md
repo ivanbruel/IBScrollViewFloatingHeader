@@ -42,5 +42,5 @@ Access the floating view by sending the floatingHeaderView message to the UIScro
 ### Known Issues
 None yet.
 
-###Contributions
+### Contributions
 - Contributions and suggestions are welcome.
